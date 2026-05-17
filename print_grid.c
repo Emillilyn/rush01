@@ -6,34 +6,27 @@
 /*   By: evavrinu <evavrinu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/16 19:05:56 by evavrinu          #+#    #+#             */
-/*   Updated: 2026/05/16 19:06:24 by evavrinu         ###   ########.fr       */
+/*   Updated: 2026/05/17 14:43:02 by evavrinu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
 void	print_grid(int grid[4][4])
 {
-	int	i;
-	int	j;
+	int	row;
+	int	col;
 
-	i = 0;
-	while (i < 4)
+	row = 0;
+	while (row < 4)
 	{
-		j = 0;
-		while (j < 4)
+		col = 0;
+		while (col < 4)
 		{
-			ft_putchar(grid[i][j] + '0');
-			if (j < 3)
-				ft_putchar(' ');
-			j++;
+			write(1, &"1234"[grid[row][col] - 1], 1);
+			if (col < 3)
+				write(1, " ", 1);
+			col++;
 		}
-		ft_putchar('\n');
-		i++;
+		write(1, "\n", 1);
+		row++;
 	}
 }
