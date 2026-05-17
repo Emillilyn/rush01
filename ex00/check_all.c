@@ -6,13 +6,13 @@
 /*   By: evavrinu <evavrinu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/17 17:49:54 by evavrinu          #+#    #+#             */
-/*   Updated: 2026/05/17 17:50:00 by evavrinu         ###   ########.fr       */
+/*   Updated: 2026/05/17 18:14:44 by evavrinu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	countvisible(int *line, int size);
+int	count_visible(int *line, int size);
 
 int	check_col_up(int grid[4][4], int *clues, int col)
 {
@@ -25,7 +25,7 @@ int	check_col_up(int grid[4][4], int *clues, int col)
 		line[i] = grid[i][col];
 		i++;
 	}
-	if (countvisible(line, 4) != clues[col])
+	if (count_visible(line, 4) != clues[col])
 		return (0);
 	return (1);
 }
@@ -41,7 +41,7 @@ int	check_col_down(int grid[4][4], int *clues, int col)
 		line[i] = grid[3 - i][col];
 		i++;
 	}
-	if (countvisible(line, 4) != clues[col + 4])
+	if (count_visible(line, 4) != clues[col + 4])
 		return (0);
 	return (1);
 }
@@ -57,7 +57,7 @@ int	check_row_left(int grid[4][4], int *clues, int row)
 		line[i] = grid[row][i];
 		i++;
 	}
-	if (countvisible(line, 4) != clues[row + 8])
+	if (count_visible(line, 4) != clues[row + 8])
 		return (0);
 	return (1);
 }
@@ -73,12 +73,12 @@ int	check_row_right(int grid[4][4], int *clues, int row)
 		line[i] = grid[row][3 - i];
 		i++;
 	}
-	if (countvisible(line, 4) != clues[row + 12])
+	if (count_visible(line, 4) != clues[row + 12])
 		return (0);
 	return (1);
 }
 
-int	checkall(int grid[4][4], int clues[16])
+int	check_all(int grid[4][4], int clues[16])
 {
 	int	i;
 

@@ -6,9 +6,15 @@
 /*   By: evavrinu <evavrinu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/17 17:50:50 by evavrinu          #+#    #+#             */
-/*   Updated: 2026/05/17 17:54:54 by evavrinu         ###   ########.fr       */
+/*   Updated: 2026/05/17 18:16:49 by evavrinu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <unistd.h>
+
+int		parse_clues(char *str, int clues[16]);
+int		solve(int grid[4][4], int clues[16], int pos);
+void	print_grid(int grid[4][4]);
 
 void	init_grid(int grid[4][4])
 {

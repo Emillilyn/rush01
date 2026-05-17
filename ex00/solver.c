@@ -6,9 +6,12 @@
 /*   By: evavrinu <evavrinu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/17 14:19:31 by evavrinu          #+#    #+#             */
-/*   Updated: 2026/05/17 17:35:12 by evavrinu         ###   ########.fr       */
+/*   Updated: 2026/05/17 18:16:58 by evavrinu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+int	is_valid(int grid[4][4], int row, int col, int val);
+int	check_all(int grid[4][4], int clues[16]);
 
 int	solve(int grid[4][4], int clues[16], int pos)
 {
